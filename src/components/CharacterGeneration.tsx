@@ -11,8 +11,8 @@ interface CharacterGenerationProps {
 }
 
 export function CharacterGeneration({ onNavigate }: CharacterGenerationProps) {
-  // Mock character variations
-  const variations = Array.from({ length: 50 }, (_, i) => i + 1);
+  // Mock character poses - limited to 10 variations
+  const variations = Array.from({ length: 10 }, (_, i) => i + 1);
 
   return (
     <div className="flex flex-col h-screen bg-white">
@@ -59,30 +59,9 @@ export function CharacterGeneration({ onNavigate }: CharacterGenerationProps) {
                 </div>
 
                 <div>
-                  <Label className="mb-3 block text-slate-700">Style</Label>
-                  <select className="w-full px-4 py-3 border border-slate-200 rounded-lg text-slate-700 bg-white">
-                    <option>Comic Book</option>
-                    <option>Manga</option>
-                    <option>Cartoon</option>
-                    <option>Realistic</option>
-                    <option>Pixel Art</option>
-                  </select>
-                </div>
-
-                <div>
-                  <Label className="mb-3 block text-slate-700">Character Type</Label>
-                  <select className="w-full px-4 py-3 border border-slate-200 rounded-lg text-slate-700 bg-white">
-                    <option>Hero</option>
-                    <option>Villain</option>
-                    <option>Sidekick</option>
-                    <option>Civilian</option>
-                    <option>Creature</option>
-                  </select>
-                </div>
-
-                <div>
-                  <Label className="mb-3 block text-slate-700">Number of Variations</Label>
-                  <Input type="number" defaultValue="50" min="1" max="100" className="border-slate-200" />
+                  <Label className="mb-3 block text-slate-700">Number of Poses</Label>
+                  <Input type="number" defaultValue="10" min="1" max="10" className="border-slate-200" />
+                  <p className="text-xs text-slate-500 mt-2">Demo version: Maximum 10 poses</p>
                 </div>
               </TabsContent>
 
@@ -97,16 +76,6 @@ export function CharacterGeneration({ onNavigate }: CharacterGenerationProps) {
                 </div>
 
                 <div>
-                  <Label className="mb-3 block text-slate-700">Style to Apply</Label>
-                  <select className="w-full px-4 py-3 border border-slate-200 rounded-lg text-slate-700 bg-white">
-                    <option>Comic Book</option>
-                    <option>Manga</option>
-                    <option>Cartoon</option>
-                    <option>Keep Original Style</option>
-                  </select>
-                </div>
-
-                <div>
                   <Label className="mb-3 block text-slate-700">Additional Modifications</Label>
                   <Textarea 
                     placeholder="Add costume, change colors, add accessories, etc."
@@ -118,14 +87,14 @@ export function CharacterGeneration({ onNavigate }: CharacterGenerationProps) {
 
             <Button className="w-full mt-8 bg-blue-500 hover:bg-blue-600 text-white shadow-none py-6">
               <Wand2 className="w-5 h-5 mr-2" />
-              Generate Characters
+              Generate Character Poses
             </Button>
 
             <div className="mt-8 p-6 bg-blue-50 rounded-xl border border-blue-100">
               <h3 className="text-sm mb-3 text-blue-900">Tips for Better Results</h3>
               <ul className="text-sm text-blue-700 space-y-2 leading-relaxed">
                 <li>• Be specific about appearance details</li>
-                <li>• Include pose and expression</li>
+                <li>• Include desired poses and expressions</li>
                 <li>• Mention clothing and accessories</li>
                 <li>• Describe the character's personality</li>
               </ul>
@@ -138,17 +107,17 @@ export function CharacterGeneration({ onNavigate }: CharacterGenerationProps) {
           <div className="p-10">
             <div className="flex items-center justify-between mb-10">
               <div>
-                <h2 className="text-2xl mb-2 text-slate-900">Generated Variations</h2>
-                <p className="text-slate-500">Click on a character to select and edit</p>
+                <h2 className="text-2xl mb-2 text-slate-900">Generated Poses</h2>
+                <p className="text-slate-500">Click on a pose to select and use in your comic</p>
               </div>
               <Button variant="outline" className="border-slate-200 text-slate-600">
                 <Wand2 className="w-4 h-4 mr-2" />
-                Generate More
+                Regenerate
               </Button>
             </div>
 
             {/* Character Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-5">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-5">
               {variations.map((i) => (
                 <Card 
                   key={i} 
@@ -158,17 +127,10 @@ export function CharacterGeneration({ onNavigate }: CharacterGenerationProps) {
                     <Users className="w-14 h-14 text-slate-300" />
                   </div>
                   <div className="p-3 text-center bg-white">
-                    <p className="text-xs text-slate-500">Variation {i}</p>
+                    <p className="text-xs text-slate-500">Pose {i}</p>
                   </div>
                 </Card>
               ))}
-            </div>
-
-            {/* Load More */}
-            <div className="mt-12 text-center">
-              <Button variant="outline" size="lg" className="border-slate-200 text-slate-600 px-8">
-                Load More Variations
-              </Button>
             </div>
           </div>
         </div>
