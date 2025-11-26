@@ -53,6 +53,7 @@
     --color-slate-500: oklch(.554 .046 257.417);
     --color-slate-600: oklch(.446 .043 257.281);
     --color-slate-700: oklch(.372 .044 257.287);
+    --color-slate-800: oklch(.279 .041 260.031);
     --color-slate-900: oklch(.208 .042 265.755);
     --color-white: #fff;
     --spacing: .25rem;
@@ -989,6 +990,10 @@
     background-color: var(--color-slate-200);
   }
 
+  .bg-slate-700 {
+    background-color: var(--color-slate-700);
+  }
+
   .bg-transparent {
     background-color: #0000;
   }
@@ -1446,6 +1451,12 @@
   @media (hover: hover) {
     .hover\:bg-slate-50:hover {
       background-color: var(--color-slate-50);
+    }
+  }
+
+  @media (hover: hover) {
+    .hover\:bg-slate-800:hover {
+      background-color: var(--color-slate-800);
     }
   }
 

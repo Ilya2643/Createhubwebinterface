@@ -13,7 +13,8 @@ import {
   Type, 
   ChevronLeft,
   Layers,
-  Square
+  Square,
+  Sparkles
 } from "lucide-react";
 
 interface EditorProps {
@@ -21,6 +22,16 @@ interface EditorProps {
 }
 
 export function Editor({ onNavigate }: EditorProps) {
+  const handleGeneratePanel = () => {
+    // AI will process and combine:
+    // - Selected character from left panel
+    // - Background image
+    // - Text elements (speech bubbles, captions)
+    // - Template layout configuration
+    // Into a single composed panel image
+    alert('AI Generation started! This will combine character, background, and text into the panel.');
+  };
+
   return (
     <div className="flex flex-col h-screen bg-white">
       {/* Top Toolbar */}
@@ -43,11 +54,19 @@ export function Editor({ onNavigate }: EditorProps) {
             <FileText className="w-4 h-4 mr-2" />
             Templates
           </Button>
+          <Button 
+            size="sm" 
+            className="bg-blue-500 hover:bg-blue-600 text-white shadow-none"
+            onClick={handleGeneratePanel}
+          >
+            <Sparkles className="w-4 h-4 mr-2" />
+            Generate Panel
+          </Button>
           <Button variant="ghost" size="sm" className="text-slate-600">
             <Save className="w-4 h-4 mr-2" />
             Save
           </Button>
-          <Button size="sm" className="bg-blue-500 hover:bg-blue-600 text-white shadow-none">
+          <Button size="sm" className="bg-slate-700 hover:bg-slate-800 text-white shadow-none">
             <Download className="w-4 h-4 mr-2" />
             Export PDF
           </Button>
