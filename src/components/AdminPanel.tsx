@@ -28,18 +28,18 @@ interface AdminPanelProps {
 
 export function AdminPanel({ onNavigate }: AdminPanelProps) {
   const templates = [
-    { id: 1, name: "Classic 4-Panel", category: "Standard", usage: 1250 },
-    { id: 2, name: "Manga Style", category: "Manga", usage: 890 },
-    { id: 3, name: "Hero Splash", category: "Action", usage: 2100 },
-    { id: 4, name: "Dialog Heavy", category: "Story", usage: 670 },
-    { id: 5, name: "Action Sequence", category: "Action", usage: 1420 },
+    { id: 1, name: "Классика 4 панели", category: "Стандарт", usage: 1250 },
+    { id: 2, name: "Манга стиль", category: "Манга", usage: 890 },
+    { id: 3, name: "Героический разворот", category: "Экшн", usage: 2100 },
+    { id: 4, name: "Много диалога", category: "История", usage: 670 },
+    { id: 5, name: "Боевая сцена", category: "Экшн", usage: 1420 },
   ];
 
   const users = [
-    { id: 1, name: "John Doe", email: "john@example.com", projects: 5, joined: "2024-01-15" },
-    { id: 2, name: "Jane Smith", email: "jane@example.com", projects: 12, joined: "2024-02-20" },
-    { id: 3, name: "Bob Wilson", email: "bob@example.com", projects: 3, joined: "2024-03-10" },
-    { id: 4, name: "Alice Brown", email: "alice@example.com", projects: 8, joined: "2024-04-05" },
+    { id: 1, name: "Иван Петров", email: "ivan@example.com", projects: 5, joined: "15.01.2024" },
+    { id: 2, name: "Мария Иванова", email: "maria@example.com", projects: 12, joined: "20.02.2024" },
+    { id: 3, name: "Алексей Сидоров", email: "alexey@example.com", projects: 3, joined: "10.03.2024" },
+    { id: 4, name: "Елена Смирнова", email: "elena@example.com", projects: 8, joined: "05.04.2024" },
   ];
 
   return (
@@ -51,29 +51,29 @@ export function AdminPanel({ onNavigate }: AdminPanelProps) {
             <div className="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center">
               <Palette className="w-6 h-6 text-white" />
             </div>
-            <span className="text-xl text-slate-900">Admin Panel</span>
+            <span className="text-xl text-slate-900">Админ панель</span>
           </div>
         </div>
         <nav className="flex-1 p-6">
           <button className="w-full flex items-center gap-3 px-5 py-4 rounded-xl text-slate-600 hover:bg-white hover:text-blue-500 transition-colors mb-2">
             <BarChart3 className="w-5 h-5" />
-            Dashboard
+            Панель управления
           </button>
           <button className="w-full flex items-center gap-3 px-5 py-4 rounded-xl bg-blue-500 text-white mb-2">
             <LayoutTemplate className="w-5 h-5" />
-            Templates
+            Шаблоны
           </button>
           <button className="w-full flex items-center gap-3 px-5 py-4 rounded-xl text-slate-600 hover:bg-white hover:text-blue-500 transition-colors mb-2">
             <ImageIcon className="w-5 h-5" />
-            Backgrounds
+            Фоны
           </button>
           <button className="w-full flex items-center gap-3 px-5 py-4 rounded-xl text-slate-600 hover:bg-white hover:text-blue-500 transition-colors mb-2">
             <Users className="w-5 h-5" />
-            Users
+            Пользователи
           </button>
           <button className="w-full flex items-center gap-3 px-5 py-4 rounded-xl text-slate-600 hover:bg-white hover:text-blue-500 transition-colors">
             <Settings className="w-5 h-5" />
-            Settings
+            Настройки
           </button>
         </nav>
         <div className="p-6 border-t border-slate-100">
@@ -82,7 +82,7 @@ export function AdminPanel({ onNavigate }: AdminPanelProps) {
             className="w-full text-slate-600"
             onClick={() => onNavigate('main')}
           >
-            Exit Admin
+            Выйти из админки
           </Button>
         </div>
       </div>
@@ -94,38 +94,38 @@ export function AdminPanel({ onNavigate }: AdminPanelProps) {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
             <Card className="p-6 border border-slate-100 shadow-none bg-white">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-slate-500">Total Users</span>
+                <span className="text-slate-500">Всего пользоват��лей</span>
                 <Users className="w-5 h-5 text-blue-500" />
               </div>
               <div className="text-3xl mb-2 text-slate-900">2,547</div>
-              <div className="text-sm text-green-600">+12% from last month</div>
+              <div className="text-sm text-green-600">+12% за прошлый месяц</div>
             </Card>
 
             <Card className="p-6 border border-slate-100 shadow-none bg-white">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-slate-500">Templates</span>
+                <span className="text-slate-500">Шаблоны</span>
                 <LayoutTemplate className="w-5 h-5 text-blue-500" />
               </div>
               <div className="text-3xl mb-2 text-slate-900">156</div>
-              <div className="text-sm text-green-600">+8 new this week</div>
+              <div className="text-sm text-green-600">+8 новых на этой неделе</div>
             </Card>
 
             <Card className="p-6 border border-slate-100 shadow-none bg-white">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-slate-500">Projects Created</span>
+                <span className="text-slate-500">Создано проектов</span>
                 <BarChart3 className="w-5 h-5 text-blue-500" />
               </div>
               <div className="text-3xl mb-2 text-slate-900">8,921</div>
-              <div className="text-sm text-green-600">+24% from last month</div>
+              <div className="text-sm text-green-600">+24% за прошлый месяц</div>
             </Card>
 
             <Card className="p-6 border border-slate-100 shadow-none bg-white">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-slate-500">Backgrounds</span>
+                <span className="text-slate-500">Фоны</span>
                 <ImageIcon className="w-5 h-5 text-blue-500" />
               </div>
               <div className="text-3xl mb-2 text-slate-900">432</div>
-              <div className="text-sm text-green-600">+15 new this week</div>
+              <div className="text-sm text-green-600">+15 новых на этой неделе</div>
             </Card>
           </div>
 
@@ -133,15 +133,15 @@ export function AdminPanel({ onNavigate }: AdminPanelProps) {
           <Card className="mb-8 border border-slate-100 shadow-none bg-white">
             <div className="p-6 border-b border-slate-100">
               <div className="flex items-center justify-between">
-                <h2 className="text-2xl text-slate-900">Comic Templates</h2>
+                <h2 className="text-2xl text-slate-900">Шаблоны комиксов</h2>
                 <div className="flex gap-4">
                   <div className="relative">
                     <Search className="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
-                    <Input placeholder="Search templates..." className="pl-10 w-64 border-slate-200" />
+                    <Input placeholder="Поиск шаблонов..." className="pl-10 w-64 border-slate-200" />
                   </div>
                   <Button className="bg-blue-500 hover:bg-blue-600 text-white shadow-none">
                     <Plus className="w-4 h-4 mr-2" />
-                    Add Template
+                    Добавить шаблон
                   </Button>
                 </div>
               </div>
@@ -149,10 +149,10 @@ export function AdminPanel({ onNavigate }: AdminPanelProps) {
             <Table>
               <TableHeader>
                 <TableRow className="border-slate-100">
-                  <TableHead className="text-slate-600">Name</TableHead>
-                  <TableHead className="text-slate-600">Category</TableHead>
-                  <TableHead className="text-slate-600">Usage Count</TableHead>
-                  <TableHead className="text-right text-slate-600">Actions</TableHead>
+                  <TableHead className="text-slate-600">Название</TableHead>
+                  <TableHead className="text-slate-600">Категория</TableHead>
+                  <TableHead className="text-slate-600">Количество использований</TableHead>
+                  <TableHead className="text-right text-slate-600">Действия</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -181,14 +181,14 @@ export function AdminPanel({ onNavigate }: AdminPanelProps) {
           <Card className="border border-slate-100 shadow-none bg-white">
             <div className="p-6 border-b border-slate-100">
               <div className="flex items-center justify-between">
-                <h2 className="text-2xl text-slate-900">User Management</h2>
+                <h2 className="text-2xl text-slate-900">Управление пользователями</h2>
                 <div className="flex gap-4">
                   <div className="relative">
                     <Search className="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
-                    <Input placeholder="Search users..." className="pl-10 w-64 border-slate-200" />
+                    <Input placeholder="Поиск пользователей..." className="pl-10 w-64 border-slate-200" />
                   </div>
                   <Button variant="outline" className="border-slate-200 text-slate-600">
-                    Export Data
+                    Экспорт данных
                   </Button>
                 </div>
               </div>
@@ -196,11 +196,11 @@ export function AdminPanel({ onNavigate }: AdminPanelProps) {
             <Table>
               <TableHeader>
                 <TableRow className="border-slate-100">
-                  <TableHead className="text-slate-600">Name</TableHead>
+                  <TableHead className="text-slate-600">Имя</TableHead>
                   <TableHead className="text-slate-600">Email</TableHead>
-                  <TableHead className="text-slate-600">Projects</TableHead>
-                  <TableHead className="text-slate-600">Joined</TableHead>
-                  <TableHead className="text-right text-slate-600">Actions</TableHead>
+                  <TableHead className="text-slate-600">Проекты</TableHead>
+                  <TableHead className="text-slate-600">Дата регистрации</TableHead>
+                  <TableHead className="text-right text-slate-600">Действия</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>

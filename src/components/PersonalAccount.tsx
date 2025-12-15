@@ -8,19 +8,19 @@ interface PersonalAccountProps {
 
 export function PersonalAccount({ onNavigate }: PersonalAccountProps) {
   const projects = [
-    { id: 1, name: "Space Adventure", pages: 12, updated: "2 hours ago" },
-    { id: 2, name: "Detective Story", pages: 8, updated: "1 day ago" },
-    { id: 3, name: "Fantasy Quest", pages: 15, updated: "3 days ago" },
-    { id: 4, name: "Superhero Chronicles", pages: 20, updated: "1 week ago" },
+    { id: 1, name: "Космическое приключение", pages: 12, updated: "2 часа назад" },
+    { id: 2, name: "Детективная история", pages: 8, updated: "1 день назад" },
+    { id: 3, name: "Фэнтези квест", pages: 15, updated: "3 дня назад" },
+    { id: 4, name: "Хроники супергероя", pages: 20, updated: "1 неделю назад" },
   ];
 
   const characters = [
-    { id: 1, name: "Hero" },
-    { id: 2, name: "Villain" },
-    { id: 3, name: "Sidekick" },
-    { id: 4, name: "Mentor" },
-    { id: 5, name: "Detective" },
-    { id: 6, name: "Alien" },
+    { id: 1, name: "Герой" },
+    { id: 2, name: "Злодей" },
+    { id: 3, name: "Помощник" },
+    { id: 4, name: "Наставник" },
+    { id: 5, name: "Детектив" },
+    { id: 6, name: "Инопланетянин" },
   ];
 
   return (
@@ -38,18 +38,18 @@ export function PersonalAccount({ onNavigate }: PersonalAccountProps) {
         <nav className="flex-1 p-6">
           <button className="w-full flex items-center gap-3 px-5 py-4 rounded-xl bg-blue-500 text-white mb-2">
             <FolderOpen className="w-5 h-5" />
-            Projects
+            Проекты
           </button>
           <button 
             className="w-full flex items-center gap-3 px-5 py-4 rounded-xl text-slate-600 hover:bg-white hover:text-blue-500 transition-colors mb-2"
             onClick={() => onNavigate('characters')}
           >
             <Users className="w-5 h-5" />
-            Characters
+            Персонажи
           </button>
           <button className="w-full flex items-center gap-3 px-5 py-4 rounded-xl text-slate-600 hover:bg-white hover:text-blue-500 transition-colors">
             <Settings className="w-5 h-5" />
-            Settings
+            Настройки
           </button>
         </nav>
         <div className="p-6 border-t border-slate-100">
@@ -58,7 +58,7 @@ export function PersonalAccount({ onNavigate }: PersonalAccountProps) {
             className="w-full text-slate-600"
             onClick={() => onNavigate('main')}
           >
-            Logout
+            Выход
           </Button>
         </div>
       </div>
@@ -69,15 +69,15 @@ export function PersonalAccount({ onNavigate }: PersonalAccountProps) {
           {/* Header */}
           <div className="flex items-center justify-between mb-12">
             <div>
-              <h1 className="text-4xl mb-2 text-slate-900">My Projects</h1>
-              <p className="text-slate-500 text-lg">Create and manage your comic projects</p>
+              <h1 className="text-4xl mb-2 text-slate-900">Мои проекты</h1>
+              <p className="text-slate-500 text-lg">Создавайте и управляйте своими проектами комиксов</p>
             </div>
             <Button 
               className="bg-blue-500 hover:bg-blue-600 text-white shadow-none px-6 py-6"
               onClick={() => onNavigate('editor')}
             >
               <Plus className="w-5 h-5 mr-2" />
-              New Project
+              Новый проект
             </Button>
           </div>
 
@@ -100,8 +100,8 @@ export function PersonalAccount({ onNavigate }: PersonalAccountProps) {
                     </button>
                   </div>
                   <div className="text-sm text-slate-500 space-y-1">
-                    <p>{project.pages} pages</p>
-                    <p>Updated {project.updated}</p>
+                    <p>{project.pages} страниц</p>
+                    <p>Обновлено {project.updated}</p>
                   </div>
                 </div>
               </Card>
@@ -111,13 +111,13 @@ export function PersonalAccount({ onNavigate }: PersonalAccountProps) {
           {/* My Characters Section */}
           <div className="mb-8">
             <div className="flex items-center justify-between mb-8">
-              <h2 className="text-3xl text-slate-900">My Characters</h2>
+              <h2 className="text-3xl text-slate-900">Мои персонажи</h2>
               <Button 
                 variant="ghost"
                 className="text-blue-500"
                 onClick={() => onNavigate('characters')}
               >
-                View All
+                Показать все
               </Button>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
